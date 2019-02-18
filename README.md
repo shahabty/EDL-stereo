@@ -29,12 +29,6 @@ http://computer_name_or_ip_address:6006
 2. Qualitative examples are stored in "saved\_dir/qualitative".
 3. Checkpoints are stored in "saved_dir/checkpoints"
 
-##Quantitative and Qualitative
-
-
-
 ## Acknowledgments
-
-
-
+Thanks to all other people who published their implementation of the paper.
 
