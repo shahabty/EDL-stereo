@@ -5,7 +5,7 @@ This implementation is based on Tensorflow 1.12 + tf.keras and Eager Execution
 
 ### Prerequisites
 Tensorflow 1.12
-pillow
+,Pillow
 ### Installing
 1. Create a Anaconda3 environment with pip
 2. Activate the environment
