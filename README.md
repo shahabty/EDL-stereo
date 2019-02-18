@@ -1,4 +1,4 @@
-# An unofficial implementation of "Efficient Deep Learning for Stereo Matching"
+## An unofficial implementation of "Efficient Deep Learning for Stereo Matching"
 
 ## Getting Started
 This implementation is based on Tensorflow 1.12 + tf.keras and Eager Execution
@@ -9,27 +9,29 @@ pillow
 ### Installing
 1. Create a Anaconda3 environment with pip
 2. Activate the environment
-2. [install tensorflow 1.12](https://www.tensorflow.org/install)
-2. Install pillow by running the following command
+3. [install tensorflow 1.12](https://www.tensorflow.org/install)
+4. Install pillow by running the following command
 ```
 conda install -c anaconda pillow 
-
 ```
-
+5. Go to [this link] (https://drive.google.com/open?id=1pVXl-E4b5P3UsJHAb1PCFGW9EaNbq5Lh) and download "saved\_dir".
+6. Dump it to the project directory.
 ## Training and Validating
-1. Training losses and validating errors are saved in "saved\_dir". Please follow the following instruction to see them in tensorboard.
+1. Training losses and validating errors are saved in "saved\_dir/runs". Please follow the following instruction to see them in tensorboard.
 ```
 cd saved_dir
 tensorboard --logdir="runs" --port=6006
-
 ```
 Then, open your browser and go to the link below.
 ```
-http://computer_name_or_ip:6006
-
+http://computer_name_or_ip_address:6006
 ```
 2. Qualitative examples are stored in "saved\_dir/qualitative".
 3. Checkpoints are stored in "saved_dir/checkpoints"
+
+##Quantitative and Qualitative
+
+
 
 ## Acknowledgments
 

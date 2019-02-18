@@ -12,10 +12,12 @@ from tqdm import tqdm
 Batch = namedtuple('Batch', ['left', 'right', 'label'])
 
 class Writer():
+
     def __init__(self,args,path = 'runs'):
         self.writer = tf.contrib.summary.create_file_writer(path, flush_millis=10000)
         self.writer.set_as_default()
         self.args = args
+
     def log_to_tensorboard(self,name,tensor_to_print = None,step = None):
         step = tf.cast(step,tf.int64)
         if name == 'train_loss':
@@ -99,7 +101,7 @@ class SiameseStereoMatching(tf.keras.Model):
     def compute(self, batch, training=None):
         if training == True:
             with tfe.GradientTape() as tape:
-                inner_product = self.call(batch.left, batch.right)
+                inner_product = self.call(batch.left, batch.right,training)
                 loss = tf.reduce_sum(tf.nn.softmax_cross_entropy_with_logits_v2(labels=batch.label,logits=inner_product))
                 return tape.gradient(loss, self.variables), loss
         else:
@@ -169,7 +171,14 @@ class SiameseStereoMatching(tf.keras.Model):
                             error_pixel_4 += (np.abs(masked_prediction_valid -disparity_ground_truth) > 4).sum() / num_valid_gt_pixels
                             error_pixel_5 += (np.abs(masked_prediction_valid -disparity_ground_truth) > 5).sum() / num_valid_gt_pixels
 
+                        #print('----------validation summary--------------')
+                        #print(error_pixel_2 / len(validation_dataset.sample_ids))
+                        #print(error_pixel_3 / len(validation_dataset.sample_ids))
+                        #print(error_pixel_4 / len(validation_dataset.sample_ids))
+                        #print(error_pixel_5 / len(validation_dataset.sample_ids))
+
                         writer.log_to_tensorboard('error',(error_pixel_2,error_pixel_3,error_pixel_4,error_pixel_5,len(validation_dataset.sample_ids)),step = self._global_step)
+
 
                         print('Saving one random prediciton...')
                         random_img_idx = np.random.choice(validation_dataset.sample_ids)

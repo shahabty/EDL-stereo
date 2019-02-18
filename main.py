@@ -8,7 +8,7 @@ tf.enable_eager_execution()
 #tf.keras.backend.set_session(tf_debug.LocalCLIDebugWrapperSession(tf.Session()))
 
 args = {
-'data_path':'', #path to kitti/training
+'data_path':'/mnt/creeper/grad/nabaviss/kitti/training',
 'out_cache_path':'saved_data/locs',
 'exp_dir': 'saved_data',
 'left_img_folder': 'image_2',  #RGB Left
