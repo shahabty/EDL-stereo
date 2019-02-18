@@ -14,7 +14,7 @@ pillow
 ```
 conda install -c anaconda pillow 
 ```
-5. Go to [this link] (https://drive.google.com/open?id=1pVXl-E4b5P3UsJHAb1PCFGW9EaNbq5Lh) and download "saved\_dir".
+5. Go to [this link](https://drive.google.com/open?id=1pVXl-E4b5P3UsJHAb1PCFGW9EaNbq5Lh) and download "saved\_dir".
 6. Dump it to the project directory.
 ## Training and Validating
 1. Training losses and validating errors are saved in "saved\_dir/runs". Please follow the following instruction to see them in tensorboard.
