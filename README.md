@@ -14,10 +14,10 @@ Tensorflow 1.12
 ```
 conda install -c anaconda pillow 
 ```
-5. Go to [this link](https://drive.google.com/open?id=1pVXl-E4b5P3UsJHAb1PCFGW9EaNbq5Lh) and download "saved\_dir".
+5. Go to [this link](https://drive.google.com/open?id=1pVXl-E4b5P3UsJHAb1PCFGW9EaNbq5Lh) and download "saved\_data".
 6. Dump it to the project directory.
 ## Training and Validating
-1. Training losses and validating errors are saved in "saved\_dir/runs". Please follow the following instruction to see them in tensorboard.
+1. Training losses and validating errors are saved in "saved\_data/runs". Please follow the following instruction to see them in tensorboard.
 ```
 cd saved_dir
 tensorboard --logdir="runs" --port=6006
@@ -26,8 +26,8 @@ Then, open your browser and go to the link below.
 ```
 http://computer_name_or_ip_address:6006
 ```
-2. Qualitative examples are stored in "saved\_dir/qualitative".
-3. Checkpoints are stored in "saved_dir/checkpoints"
+2. Qualitative examples are stored in "saved\_data/qualitative".
+3. Checkpoints are stored in "saved_data/checkpoints"
 
 ## Acknowledgments
 Thanks to all other people who published their implementation of the paper.
